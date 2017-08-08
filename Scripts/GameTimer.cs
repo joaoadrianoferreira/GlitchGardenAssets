@@ -24,10 +24,9 @@ public class GameTimer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		slider.value = Time.timeSinceLevelLoad / levelSeconds;
-		if (slider.value == 1 && isEndOfLevel == false) {
-			audioSource.Play(); 
+		if (slider.value == 1) {
 			isEndOfLevel = true; 
-			Invoke ("LoadNextLevel", audioSource.clip.length); 
+			LoadNextLevel(); 
 		}
 	}
 
