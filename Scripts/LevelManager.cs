@@ -36,4 +36,9 @@ public class LevelManager : MonoBehaviour {
 		CancelInvoke();
 	}
 
+	public float getLoadedLevel() {
+		Debug.Log (SceneManager.GetActiveScene().buildIndex); 
+		return SceneManager.GetActiveScene().buildIndex;
+	}
+
 }
