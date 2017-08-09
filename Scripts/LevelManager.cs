@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour {
 
 
 	public void Start() {
+		loadPrefs(); 
 		if (!splashLoaded && autoLoadNextLevel > 0) {
 			Invoke("LoadNextLevel", autoLoadNextLevel); 
 		} else if (splashLoaded) {
@@ -41,4 +42,9 @@ public class LevelManager : MonoBehaviour {
 		return SceneManager.GetActiveScene().buildIndex;
 	}
 
+	void loadPrefs() {
+		if (PlayerPrefsManager.getDifficulty() == 0) {
+			PlayerPrefsManager.setDifficulty(1); 
+		}  
+	}
 }
